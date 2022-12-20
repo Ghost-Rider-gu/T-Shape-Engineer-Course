@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --gold: #f89d42;
+    --dark-shadow: #d56b4d;
+}
+
+.t-shape {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+.t-shape > * {
+    padding: 10px;
+    flex: 1 100%;
+}
+
+.title {
+    background: linear-gradient(
+        90deg,
+        var(--gold) 10%,
+        var(--dark-shadow) 50%
+    );
+    background-clip: text;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: clamp(1em, 10vw, 5rem);
+    letter-spacing: 1px;
+    -webkit-text-fill-color: transparent;  
+}
+
+button {
+    letter-spacing: 0.1em;
+    padding: 10px;
+    transition: 0.4s;
+    font-size: 1em;
+    font-weight: 500;
+    color: black;
+    border: 0;
+    border: 1px solid #e2e2e2;
+    background-color: #ffffff;
+    border-radius: 0.25rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #e2e2e2;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    gap: 50px;
+}
+
+li {
+    width: 80px;
+    height: 80px;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+ul li a {
+    text-decoration: none;
+    font-size: 2em;
+    color: var(--link-color);
+    transition: 0.4s;
+}
+
+ul li:hover {
+    transform: scale(0.75);
+}
+
+ul li:hover a {
+    font-size: 3em;
+    filter: drop-shadow(0 0 10px var(--link-color)) drop-shadow(0 0 20px var(--link-color)) drop-shadow(0 0 30px var(--link-color));
+}
