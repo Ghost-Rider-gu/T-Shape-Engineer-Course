@@ -120,10 +120,10 @@ ul li:hover a {
     padding-bottom: 10px;
 }
 
-.t-shape-schema {
+.hide-data {
     display: none;
 }
 
-.t-shape-articles {
-    display: none;
+.show-data {
+    display: block;
 }
