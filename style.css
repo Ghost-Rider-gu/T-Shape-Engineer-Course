@@ -85,3 +85,45 @@ ul li:hover a {
     font-size: 3em;
     filter: drop-shadow(0 0 10px var(--link-color)) drop-shadow(0 0 20px var(--link-color)) drop-shadow(0 0 30px var(--link-color));
 }
+
+.t-shape-about {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    margin: auto;
+    text-align: justify;
+    max-width: 850px;
+}
+
+.t-shape-about h1 {
+    text-align: center;
+    color: #555;
+    font-size: 25px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    padding-bottom: 15px;
+}
+
+.t-shape-about a {
+    color: steelblue;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.t-shape-about a:hover {
+    text-decoration: underline;
+}
+
+.t-shape-about p {
+    border-left: solid 2px #ccc;
+    padding-left: 40px;
+    padding-bottom: 10px;
+}
+
+.t-shape-schema {
+    display: none;
+}
+
+.t-shape-articles {
+    display: none;
+}
