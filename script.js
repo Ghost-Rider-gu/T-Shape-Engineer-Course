@@ -106,15 +106,60 @@ function preparingSchemaArea() {
 preparingSchemaArea();
 
 // preparing and drawing T-Shape Engineer articles graph
-const articlesData = {};
+const articlesData = {
+  name: "Introduction",
+  link: "",
+  children: [
+    {
+      name: "DevOps",
+      link: "",
+    },
+    { 
+      name: "Network",
+      link: "",
+    },
+  ],
+};
 const articlesCanvas = d3.select("#articles-canvas");
 
 function preparingArticleArea() {
+  const articleTree = d3.tree().size([400, 400]);
+  const nodes = d3.hierarchy(articlesData, data => data.children);
+
+  articleTree(nodes);
+
+  let node = articlesCanvas
+    .selectAll(".node")
+    .data(nodes)
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", function (data) {
+      return "translate(" + data.x + " " + data.y + ")";
+    });
+
+  node
+    .append("circle")
+    .attr("r", 8)
+    .attr("fill", "#e2e2e2");
+
+  node.append("text").text(function (schema) {
+    return schema.data.name;
+  });
+
   articlesCanvas
-    .append("text")
-    .attr("x", 235)
-    .attr("y", 250)
-    .attr("fill", "black")
-    .text("A TREE OF ARTICLES");
+    .selectAll(".link")
+    .data(articleTree(nodes).links())
+    .enter()
+    .append("path")
+    .attr("class", "link")
+    .attr("fill", "none")
+    .attr("stroke", "black")
+    .attr("d", function(data) {
+      return "M" + data.target.x + "," + data.target.y
+      + "C" + (data.source.y + 200) + "," + data.source.x
+      + " " + (data.source.y + 200) + "," + data.source.x
+      + " " + data.source.x + "," + data.source.y
+    });
 }
 preparingArticleArea();
