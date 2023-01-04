@@ -1,0 +1,48 @@
+{
+  "name": "Technologies",
+  "value": 100,
+  "children": [
+    {
+      "name": "DataBases",
+      "value": 75,
+      "children": [
+        {
+          "name": "MySQL",
+          "value": 25
+        },
+        {
+          "name": "MongoDB",
+          "value": 25
+        },
+        {
+          "name": "PostgreSQL",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "name": "Microservices",
+      "value": 75
+    },
+    {
+      "name": "Security",
+      "value": 75
+    },
+    {
+      "name": "DevOps",
+      "value": 75
+    },
+    {
+      "name": "GameDev",
+      "value": 75
+    },
+    {
+      "name": "DevOps",
+      "value": 75
+    },
+    {
+      "name": "Operating Systems",
+      "value": 75
+    }
+  ]
+}
