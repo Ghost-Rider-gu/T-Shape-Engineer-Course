@@ -127,3 +127,34 @@ ul li:hover a {
 .show-data {
     display: block;
 }
+
+.group path {
+    fill: whitesmoke;
+    fill-opacity: 0;
+    stroke: none;
+ }
+
+ textPath {
+    font-size: 12px;
+    font-weight: bold;
+ }
+
+ text {
+    fill: #555555;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+ }
+
+ .node text {
+    text-anchor: middle;
+ }
+
+ .circle {
+    fill-opacity: 0.7;
+    stroke: none;
+ }
+
+ .circle:hover {
+    fill-opacity: 1;
+    stroke: #f89d42;
+    cursor: pointer;
+ }
