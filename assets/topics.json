@@ -1,5 +1,5 @@
 {
-  "name": "Technologies",
+  "name": "T-Shape Engineer's Topics",
   "value": 100,
   "children": [
     {
@@ -22,27 +22,75 @@
     },
     {
       "name": "Microservices",
-      "value": 75
+      "value": 75,
+      "children": [
+        {
+          "name": "AntiPatterns",
+          "value": 25
+        },
+        {
+          "name": "Pitfalls",
+          "value": 25
+        }
+      ]
     },
     {
       "name": "Security",
-      "value": 75
+      "value": 75,
+      "children": [
+        {
+          "name": "Tools",
+          "value": 25
+        }
+      ]
     },
     {
-      "name": "DevOps",
-      "value": 75
+      "name": "API",
+      "value": 75,
+      "children": [
+        {
+          "name": "Patterns",
+          "value": 25
+        }
+      ]
     },
     {
       "name": "GameDev",
-      "value": 75
+      "value": 75,
+      "children": [
+        {
+          "name": "Godot",
+          "value": 25
+        },
+        {
+          "name": "LibGDX",
+          "value": 25
+        }
+      ]
     },
     {
       "name": "DevOps",
-      "value": 75
+      "value": 75,
+      "children": [
+        {
+          "name": "Jenkins",
+          "value": 25
+        }
+      ]
     },
     {
       "name": "Operating Systems",
-      "value": 75
+      "value": 75,
+      "children": [
+        {
+          "name": "Linux",
+          "value": 25
+        },
+        {
+          "name": "Windows",
+          "value": 25
+        }
+      ]
     }
   ]
 }
