@@ -1,18 +1,54 @@
 {
-  "name": "Introduction",
+  "id": 1,
+  "name": "T-Shape Engineer Articles",
+  "type": "Root",
+  "description": "The series of articles for T-Shape Engineers",
   "link": "",
   "children": [
     {
-      "name": "Computer Science",
-      "link": ""
+      "id": 2,
+      "name": "Introduction",
+      "type": "Intro",
+      "description": "This is the first articles of series",
+      "link": "",
+      "children": [
+        {
+          "id": 3,
+          "name": "Part #1",
+          "type": "Intro",
+          "description": "First Part of Intro",
+          "link": ""
+        },
+        {
+          "id": 3,
+          "name": "Part #2",
+          "type": "Intro",
+          "description": "Second Part of Intro",
+          "link": ""
+        }
+      ]
     },
     {
-      "name": "Network",
-      "link": ""
-    },
-    {
-      "name": "Patterns",
-      "link": ""
+      "id": 4,
+      "name": "Microservices",
+      "type": "Microservices",
+      "description": "About microservices and all around",
+      "children": [
+        {
+          "id": 5,
+          "name": "Microservice's patterns",
+          "type": "Microservices",
+          "description": "Patterns",
+          "link": ""
+        },
+        {
+          "id": 6,
+          "name": "Tools",
+          "type": "Microservices",
+          "description": "Let's get through the tools",
+          "link": ""
+        }
+      ]
     }
   ]
 }
