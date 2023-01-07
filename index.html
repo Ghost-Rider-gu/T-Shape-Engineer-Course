@@ -8,6 +8,8 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/d3-mitch-tree@1.1.2/dist/css/d3-mitch-tree.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/d3-mitch-tree@1.1.2/dist/css/d3-mitch-tree-theme-default.min.css" />
     <link rel="stylesheet" href="style.css" />
     <title>T-Shape Engineer Course</title>
 </head>
@@ -60,8 +62,8 @@
                 </svg>
             </div>
             <div class="t-shape-articles hide-data" id="articles-area">
-                <svg id="articles-canvas" height="500" width="500">
-                </svg>
+                <div id="articles-canvas">
+                </div>
             </div>
         </main>
         <footer>
@@ -96,6 +98,7 @@
         </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-mitch-tree@1.1.2/dist/js/d3-mitch-tree.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

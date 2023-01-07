@@ -120,56 +120,28 @@ function preparingSchemaArea(topicsData) {
 }
 
 // preparing and drawing T-Shape Engineer articles graph
-const articlesCanvas = d3.select("#articles-canvas");
+const articlesCanvas = document.getElementById("articles-canvas");
+d3.json("assets/articles.json").then(function (data) {
+  preparingArticleArea(data);
+});
 
 function preparingArticleArea(articlesData) {
-  const articleTree = d3.tree().size([400, 400]);
-  const nodes = d3.hierarchy(articlesData, (data) => data.children);
-
-  articleTree(nodes);
-
-  let node = articlesCanvas
-    .selectAll(".node")
-    .data(nodes)
-    .enter()
-    .append("g")
-    .attr("class", "node")
-    .attr("transform", function (data) {
-      return "translate(" + data.x + " " + data.y + ")";
-    });
-
-  node.append("circle").attr("r", 8).attr("fill", "#e2e2e2");
-
-  node.append("text").text(function (schema) {
-    return schema.data.name;
-  });
-
-  articlesCanvas
-    .selectAll(".link")
-    .data(articleTree(nodes).links())
-    .enter()
-    .append("path")
-    .attr("class", "link")
-    .attr("fill", "none")
-    .attr("stroke", "black")
-    .attr("d", function (data) {
-      return (
-        "M" +
-        data.target.x +
-        "," +
-        data.target.y +
-        "C" +
-        (data.source.y + 200) +
-        "," +
-        data.source.x +
-        " " +
-        (data.source.y + 200) +
-        "," +
-        data.source.x +
-        " " +
-        data.source.x +
-        "," +
-        data.source.y
-      );
-    });
+   new d3.mitchTree.boxedTree()
+      .setData(articlesData)
+      .setAllowFocus(true)
+      .setElement(articlesCanvas)
+      .setIdAccessor(function(data) {
+        return data.id;
+      })
+      .setChildrenAccessor(function(data) {
+        return data.children;
+      })
+      .setBodyDisplayTextAccessor(function(data) {
+        return data.description;
+      })
+      .setTitleDisplayTextAccessor(function(data) {
+        return (`<a href="#"> ${data.name} </a>`);
+      })
+      .setOrientation("topToBottom")
+      .initialize();
 }
