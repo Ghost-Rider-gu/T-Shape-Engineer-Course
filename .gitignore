@@ -7,4 +7,3 @@
 .settings/
 *.sublime-workspace
 .vscode
-node_modules
