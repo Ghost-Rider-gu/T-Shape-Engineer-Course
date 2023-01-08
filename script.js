@@ -126,22 +126,39 @@ d3.json("assets/articles.json").then(function (data) {
 });
 
 function preparingArticleArea(articlesData) {
-   new d3.mitchTree.boxedTree()
-      .setData(articlesData)
-      .setAllowFocus(true)
-      .setElement(articlesCanvas)
-      .setIdAccessor(function(data) {
-        return data.id;
-      })
-      .setChildrenAccessor(function(data) {
-        return data.children;
-      })
-      .setBodyDisplayTextAccessor(function(data) {
-        return data.description;
-      })
-      .setTitleDisplayTextAccessor(function(data) {
-        return (`<a href="#"> ${data.name} </a>`);
-      })
-      .setOrientation("topToBottom")
-      .initialize();
+  const articlesTree = new d3.mitchTree.boxedTree()
+    .setData(articlesData)
+    .setAllowFocus(true)
+    .setElement(articlesCanvas)
+    .setMinScale(0.5)
+    .setMaxScale(0.7)
+    .setIdAccessor(function (data) {
+      return data.id;
+    })
+    .setChildrenAccessor(function (data) {
+      return data.children;
+    })
+    .setBodyDisplayTextAccessor(function (data) {
+      return data.description;
+    })
+    .setTitleDisplayTextAccessor(function (data) {
+      return data.name;
+    })
+    .setOrientation("topToBottom")
+    .setMargins({
+      top: -100,
+      right: 20,
+      bottom: 10,
+      left: 250,
+    })
+    .initialize();
+
+  articlesTree.getZoomListener().scaleTo(articlesTree.getSvg(), 0.6);
+  articlesTree
+    .getZoomListener()
+    .translateTo(
+      articlesTree.getSvg(),
+      articlesTree.getWidthWithoutMargins(),
+      articlesTree.getHeightWithoutMargins() / 2
+    );
 }
