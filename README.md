@@ -15,5 +15,5 @@ What I'm using for that small web page:
  - ***Plugin for D3.js library - [D3 Mitch Tree](https://github.com/deltoss/d3-mitch-tree)***
 
 <p align="center">
-![Preview of the page](https://github.com/Ghost-Rider-gu/T-Shape-Engineer-Course/blob/master/assets/T-Shape-Engineer-Course.gif)
+    <img src="https://github.com/Ghost-Rider-gu/T-Shape-Engineer-Course/blob/master/assets/T-Shape-Engineer-Course.gif" />
 </p>
