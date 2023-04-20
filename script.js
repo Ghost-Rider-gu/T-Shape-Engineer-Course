@@ -1,10 +1,12 @@
 const aboutButton = document.getElementById("t-about");
 const schemaButton = document.getElementById("t-schema");
 const articlesButton = document.getElementById("t-articles");
+const resourcesButton = document.getElementById("t-resources");
 
 const aboutArea = document.getElementById("about-area");
 const schemaArea = document.getElementById("schema-area");
 const articlesArea = document.getElementById("articles-area");
+const resourcesArea = document.getElementById("resources-area");
 
 let currentArea = aboutArea;
 
@@ -28,6 +30,10 @@ schemaButton.addEventListener("click", () => {
 
 articlesButton.addEventListener("click", () => {
   switchDisplayArea(articlesArea, currentArea);
+});
+
+resourcesButton.addEventListener("click", () => {
+  switchDisplayArea(resourcesArea, currentArea);
 });
 
 // preparing and drawing T-Shape Engineer schema
