@@ -167,4 +167,48 @@ function preparingArticleArea(articlesData) {
       articlesTree.getWidthWithoutMargins(),
       articlesTree.getHeightWithoutMargins() / 2
     );
+};
+
+async function loadResources() {
+  const response = await fetch("assets/resources.json");
+  const jsonData = await response.json();
+  const resources = jsonData.resources;
+
+  buildAccordion(resources);
 }
+
+function buildAccordion(resources) {
+  const resAccordion = document.getElementById("res-accordion");
+
+  resources.forEach(function (resource, index) {
+    const newAcord = document.createElement("div");
+
+    newAcord.innerHTML = `<label for="tab-${index}" class="bg-tab">
+                            <i class="fa fa-book"></i>
+                            ${Object.keys(resource)}
+                          </label>
+                          <input type="checkbox" name="tab-resource" id="tab-${index}">
+                          <i class="fa fa-chevron-circle-down"></i>
+                          <div class="content" >
+                            <span class="square"></span>
+                            ${getResourcesByDynamicKey(resource)}
+                          </div>`;
+    newAcord.className = "acord";
+
+    resAccordion.appendChild(newAcord);
+  });
+}
+
+function getResourcesByDynamicKey(resourceName) {
+  const propertyName = Object.keys(resourceName);
+  const resources = resourceName[propertyName];
+  
+  let html = "";
+  resources.forEach(function(resource, index) {
+    html += `<p>${index + 1}. ${resource.resourceName} (${resource.resourceType})</p>`;
+  });
+  
+  return html;
+}
+
+loadResources();

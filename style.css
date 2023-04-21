@@ -132,69 +132,160 @@ ul li:hover a {
     fill: whitesmoke;
     fill-opacity: 0;
     stroke: none;
- }
+}
 
- textPath {
+textPath {
     font-size: 12px;
     font-weight: bold;
- }
+}
 
- text {
+text {
     fill: #555555;
     font-family: "Helvetica Neue", Helvetica, sans-serif;
- }
+}
 
- .node text {
+.node text {
     text-anchor: middle;
- }
+}
 
- .circle {
+.circle {
     fill-opacity: 0.7;
     stroke: none;
- }
+}
 
- .circle:hover {
+.circle:hover {
     fill-opacity: 1;
     stroke: #f89d42;
     cursor: pointer;
- }
+}
 
- .mitch-d3-tree.boxed-tree.default .link {
+.mitch-d3-tree.boxed-tree.default .link {
     fill: none;
     stroke: var(--dark-shadow);
     stroke-width: 2px;
-  }
+}
   
-  .mitch-d3-tree.boxed-tree.default .node.collapsed .body-group .body-box {
+.mitch-d3-tree.boxed-tree.default .node.collapsed .body-group .body-box {
     fill: #f8e5df;
-  }
+}
   
-  .mitch-d3-tree.boxed-tree.default .node.selected .body-group .body-box {
+.mitch-d3-tree.boxed-tree.default .node.selected .body-group .body-box {
     stroke: var(--dark-shadow);
     stroke-width: 2.5px;
-  }
+}
   
-  .mitch-d3-tree.boxed-tree.default .node .body-group .body-box {
+.mitch-d3-tree.boxed-tree.default .node .body-group .body-box {
     stroke: var(--dark-shadow);
     fill: white;
-  }
+}
   
-  .mitch-d3-tree.boxed-tree.default .node .title-group .title-box {
+.mitch-d3-tree.boxed-tree.default .node .title-group .title-box {
     stroke: var(--dark-shadow);
     fill: #f2d0c5;
-  }
+}
   
-  .mitch-d3-tree.boxed-tree.default .node .title-group text {
+.mitch-d3-tree.boxed-tree.default .node .title-group text {
     fill: #555555;
-  }
+}
   
-  .mitch-d3-tree.circle-tree.default .link {
+.mitch-d3-tree.circle-tree.default .link {
     fill: none;
     stroke: var(--dark-shadow);
     stroke-width: 2px;
-  }
+}
 
-  .mitch-d3-tree.circle-tree.default .node text {
+.mitch-d3-tree.circle-tree.default .node text {
     font: 12px sans-serif;
     font-family: "Helvetica Neue", Helvetica, sans-serif
-  }
+}
+
+.bg-tab,
+.bg-tab ~ .content span {
+    background-color: #f2d0c5;
+}
+
+.accordion {
+    background-color: #bcc8dd;
+    font-size: 18px;
+    color: #302f2f;
+    width: 650px;
+    margin: 40px auto;
+    box-shadow: 0 0 10px rgba(240, 156, 47, 0.3)
+}
+
+.accordion .acord {
+    position: relative;
+    overflow: hidden;
+}
+
+.accordion .acord label {
+    position: relative;
+    z-index: 1000;
+    display: block;
+    padding: 0 40px 0 0;
+}
+
+.accordion .acord label i {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    text-align: center;
+}
+
+.accordion .acord label,
+.accordion .acord label i,
+.accordion .acord i.fa-chevron-circle-down {
+    height: 40px;
+    line-height: 40px;
+}
+
+.accordion .acord i.fa-chevron-circle-down {
+    position: absolute;
+    z-index: 1111;
+    top: 0;
+    left: 0;
+    width: 40px;
+    text-align: center;
+    -moz-transition: all .2s linear 0s;
+    -webkit-transition: all .2s linear 0s;
+    transition: all .2s linear 0s;
+}
+
+.accordion .acord input {
+    display: none;
+}
+
+.accordion .content {
+    position: relative;
+    overflow: hidden;
+    -moz-transition: height 1s linear 0s;
+    -webkit-transition: height 1s linear 0s;
+    transition: height 1s linear 0s;
+    height: 0;
+    font-size: 24px;
+    line-height: 22px;
+    color: #302f2f;
+    text-align: left;
+    direction: ltr
+}
+
+.accordion .content span.square {
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: -17px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+}
+
+.accordion input[type="checkbox"]:checked ~ div.content {
+    height: 300px;
+    padding: 10px;
+}
+
+.accordion input[type="checkbox"]:checked ~ i.fa-chevron-circle-down {
+    transform: rotate(180deg);
+}
