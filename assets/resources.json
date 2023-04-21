@@ -1,0 +1,48 @@
+{
+    "resources": [
+        {
+            "INTRODUCTION": [
+                {
+                    "id": 1,
+                    "resourceType": "book",
+                    "resourceName": "Cool book #1"
+                },
+                {
+                    "id": 2,
+                    "resourceType": "link",
+                    "resourceName": "Google",
+                    "resourceLink": "https://www.google.com"
+                },
+                {
+                    "id": 3,
+                    "resourceType": "article",
+                    "resourceName": "About introduction",
+                    "resourceLink": "https://www.google.com"
+                }
+            ]
+        },
+        {
+            "SYSTEM DESIGN": [
+                {
+                    "id": 1,
+                    "resourceType": "book",
+                    "resourceName": "Cool System Design #1"
+                }
+            ]
+        },
+        {
+            "JAVA": [
+                {
+                    "id": 1,
+                    "resourceType": "book",
+                    "resourceName": "Effective Java"
+                },
+                {
+                    "id": 2,
+                    "resourceType": "book",
+                    "resourceName": "All about Java"
+                }
+            ]
+        }
+    ]
+}
